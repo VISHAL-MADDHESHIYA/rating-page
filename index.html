@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Feedback & Rating UI</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <main class="container">
+        <header class="header">
+            <div class="header-top">
+                <h1>Share Your Experience</h1>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    🌙
+                </button>
+            </div>
+            <p>We value your feedback. Choose any of the methods below to rate us.</p>
+        </header>
+
+        <div class="grid-layout">
+            <!-- MODEL 1: Star Rating with Ripple -->
+            <section class="card">
+                <h2 class="card-title">1. Overall Rating</h2>
+                <div class="star-wrapper" id="star-wrapper" role="radiogroup" aria-label="Star Rating">
+                    <!-- Stars injected by JS -->
+                </div>
+                <p class="feedback-text" id="star-feedback">Rating: 0/5</p>
+            </section>
+
+            <!-- MODEL 2: Emoji Reactions with Floating Wave -->
+            <section class="card" style="position: relative; overflow: hidden;">
+                <h2 class="card-title">2. How do you feel?</h2>
+                <div class="emoji-wrapper" id="emoji-wrapper" role="radiogroup" aria-label="Emoji Rating">
+                    <button class="emoji-btn" data-emoji="😡" data-value="1" aria-label="Angry">😡</button>
+                    <button class="emoji-btn" data-emoji="🙁" data-value="2" aria-label="Sad">🙁</button>
+                    <button class="emoji-btn" data-emoji="😐" data-value="3" aria-label="Neutral">😐</button>
+                    <button class="emoji-btn" data-emoji="🙂" data-value="4" aria-label="Happy">🙂</button>
+                    <button class="emoji-btn" data-emoji="😍" data-value="5" aria-label="Love">😍</button>
+                </div>
+            </section>
+
+            <!-- MODEL 3: Heart Button with Particle Burst -->
+            <section class="card">
+                <h2 class="card-title">3. Love this product?</h2>
+                <div class="heart-container" id="heart-container">
+                    <button class="heart-btn" id="heart-btn" aria-label="Like">♥</button>
+                </div>
+            </section>
+
+            <!-- MODEL 4: Fluid Slider -->
+            <section class="card">
+                <h2 class="card-title">4. Satisfaction Scale</h2>
+                <div class="slider-wrapper">
+                    <div class="slider-value" id="slider-value">50%</div>
+                    <input type="range" min="0" max="100" value="50" class="rating-slider" id="slider" aria-label="Satisfaction Slider">
+                </div>
+            </section>
+        </div>
+
+        <!-- MODEL 5: NPS Scale -->
+        <section class="card mt-4">
+            <h2 class="card-title">5. Net Promoter Score (0-10)</h2>
+            <p class="subtitle">How likely are you to recommend us to a friend?</p>
+            <div class="nps-wrapper" id="nps-wrapper" role="radiogroup" aria-label="NPS Score">
+                <!-- NPS buttons injected by JS -->
+            </div>
+        </section>
+
+        <!-- Review Section -->
+        <section class="card mt-4">
+            <h2 class="card-title">Leave a written review</h2>
+            <form class="review-form" id="review-form">
+                <textarea id="review-text" placeholder="Tell us what you liked or what we can improve..." required aria-label="Review text"></textarea>
+                <button type="submit" class="submit-btn" id="submit-btn">
+                    <span>Submit Feedback</span>
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
